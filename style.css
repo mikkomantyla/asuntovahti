@@ -124,7 +124,44 @@ input[type="text"], input[type="number"], select {
   background: var(--bg);
 }
 input:focus, select:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-input[type="range"] { width: 100%; margin: 2px 0 0; accent-color: var(--accent); cursor: pointer; }
+/* Fully custom slider so it looks the same in Safari, Chrome and Firefox. */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 22px;
+  margin: 2px 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--accent) var(--fill, 100%), var(--line) var(--fill, 100%));
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -7px;
+  border-radius: 50%;
+  border: 3px solid var(--surface);
+  background: var(--accent);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+}
+input[type="range"]::-moz-range-track { height: 6px; border-radius: 999px; background: var(--line); }
+input[type="range"]::-moz-range-progress { height: 6px; border-radius: 999px; background: var(--accent); }
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--surface);
+  background: var(--accent);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+}
 .range-scale { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
 legend output { float: right; margin-left: 8px; color: var(--accent); }
 .range { display: flex; align-items: center; gap: 6px; }

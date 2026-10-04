@@ -221,6 +221,7 @@ function renderCriteria() {
 function renderDaysLabel() {
   const days = state.criteria.daysMax;
   $('#days-label').textContent = days == null ? 'Ei rajaa' : `enintään ${days} pv`;
+  $('#days').style.setProperty('--fill', `${((days ?? DAYS_SLIDER_MAX) / DAYS_SLIDER_MAX) * 100}%`);
 }
 
 function celebrate(card, button) {
