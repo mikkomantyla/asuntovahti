@@ -28,6 +28,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 
 body {
   margin: 0;
@@ -157,7 +158,18 @@ input:focus, select:focus, button:focus-visible { outline: 2px solid var(--accen
 .toolbar { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
 .toolbar #summary { margin-right: auto; }
 .check, .sort { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); white-space: nowrap; }
-.sort select { width: auto; background: var(--surface); }
+.sort select {
+  width: auto;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 7px 34px 7px 12px;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%236b746e' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 12px center;
+  transition: border-color .15s, box-shadow .15s;
+}
+.sort select:hover { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; }
 
@@ -207,6 +219,34 @@ input:focus, select:focus, button:focus-visible { outline: 2px solid var(--accen
 .actions .save { background: var(--accent); border-color: var(--accent); color: #fff; }
 @media (prefers-color-scheme: dark) { .actions .save { color: #10201a; } }
 .actions .save:hover { filter: brightness(1.08); }
+
+/* Save celebration: the button turns warm, the heart beats and a burst of hearts floats up. */
+.actions .save { position: relative; transition: background .25s, border-color .25s; }
+.actions .save.saving { background: #e5484d; border-color: #e5484d; color: #fff; animation: save-pop .5s cubic-bezier(.3, 1.6, .5, 1); }
+.actions .save.saving .heart { display: inline-block; animation: heart-beat .5s ease-in-out 2; }
+.card.saving { animation: card-glow 1s ease-out; }
+.card.saving .reject { opacity: .35; pointer-events: none; }
+.burst {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  pointer-events: none;
+  color: #e5484d;
+  font-size: var(--size);
+  animation: burst 1s cubic-bezier(.2, .7, .3, 1) var(--delay) both;
+}
+@keyframes save-pop { 0% { transform: scale(1); } 35% { transform: scale(.92); } 70% { transform: scale(1.06); } 100% { transform: scale(1); } }
+@keyframes heart-beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.5); } }
+@keyframes card-glow { 0% { box-shadow: 0 0 0 0 rgba(229, 72, 77, .5); } 100% { box-shadow: 0 0 0 18px rgba(229, 72, 77, 0); } }
+@keyframes burst {
+  0% { transform: translate(-50%, 0) scale(.3) rotate(0); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--dx)), var(--dy)) scale(1) rotate(var(--rot)); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .actions .save.saving, .actions .save.saving .heart, .card.saving { animation: none; }
+  .burst { display: none; }
+}
 
 .empty {
   grid-column: 1 / -1;

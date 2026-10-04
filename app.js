@@ -5,6 +5,7 @@
 const STORAGE_KEY = 'asuntovahti:v1';
 const NEW_WINDOW_MS = 36 * 60 * 60 * 1000; // first seen within the latest daily crawl
 const PAGE = 60;
+const SAVE_ANIMATION_MS = 1000;
 
 const DEFAULT_CRITERIA = {
   zips: ['00120'],
@@ -156,7 +157,7 @@ function cardHtml(l, { saved }) {
       <div class="actions">
         ${saved
           ? '<button class="reject" data-action="unsave">Poista tallennetuista</button>'
-          : '<button class="reject" data-action="reject">✕ Hylkää</button><button class="save" data-action="save">♥ Tallenna</button>'}
+          : '<button class="reject" data-action="reject">✕ Hylkää</button><button class="save" data-action="save"><span class="heart">♥</span> <span class="label">Tallenna</span></button>'}
       </div>
     </article>`;
 }
@@ -206,6 +207,23 @@ function renderCriteria() {
     .map((z) => `<span class="chip">${esc(z)}<button type="button" data-zip="${esc(z)}" aria-label="Poista ${esc(z)}">×</button></span>`)
     .join('');
   $('#sort').value = state.sort;
+}
+
+function celebrate(card, button) {
+  card.classList.add('saving');
+  button.classList.add('saving');
+  button.querySelector('.label').textContent = 'Tallennettu!';
+  for (let i = 0; i < 9; i++) {
+    const heart = document.createElement('span');
+    heart.className = 'burst';
+    heart.textContent = '♥';
+    heart.style.setProperty('--dx', `${Math.round((Math.random() - 0.5) * 220)}px`);
+    heart.style.setProperty('--dy', `${-60 - Math.round(Math.random() * 110)}px`);
+    heart.style.setProperty('--rot', `${Math.round((Math.random() - 0.5) * 80)}deg`);
+    heart.style.setProperty('--size', `${14 + Math.round(Math.random() * 14)}px`);
+    heart.style.setProperty('--delay', `${Math.round(Math.random() * 180)}ms`);
+    button.append(heart);
+  }
 }
 
 let toastTimer;
@@ -294,12 +312,21 @@ function bindEvents() {
   $('#share').addEventListener('click', copyShareLink);
 
   $('#list').addEventListener('click', (e) => {
-    const action = e.target.dataset.action;
-    if (!action) return;
-    const id = Number(e.target.closest('.card').dataset.id);
+    const button = e.target.closest('[data-action]');
+    if (!button) return;
+    const action = button.dataset.action;
+    const card = button.closest('.card');
+    if (card.classList.contains('saving')) return;
+    const id = Number(card.dataset.id);
     if (action === 'save') {
-      state.saved[id] = byId.get(id);
-      toast('Tallennettu', () => { delete state.saved[id]; update(); });
+      // Let the celebration play for a second before the card leaves the list.
+      celebrate(card, button);
+      setTimeout(() => {
+        state.saved[id] = byId.get(id);
+        toast('Tallennettu', () => { delete state.saved[id]; update(); });
+        update();
+      }, SAVE_ANIMATION_MS);
+      return;
     } else if (action === 'reject') {
       state.rejected.push(id);
       toast('Hylätty – ei näytetä enää', () => { state.rejected = state.rejected.filter((r) => r !== id); update(); });
@@ -323,6 +350,8 @@ function bindEvents() {
 // ---- Start -------------------------------------------------------------------
 
 async function start() {
+  // On phones the criteria panel would fill the first screen, so start it collapsed.
+  if (matchMedia('(max-width: 860px)').matches) $('#filters-details').open = false;
   bindEvents();
   renderCriteria();
   try {
