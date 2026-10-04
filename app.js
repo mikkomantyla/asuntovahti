@@ -10,6 +10,7 @@ const SAVE_ANIMATION_MS = 1000;
 const DEFAULT_CRITERIA = {
   zips: ['00120'],
   priceMin: null, priceMax: null,
+  sqmMin: null, sqmMax: null,
   sizeMin: 60, sizeMax: null,
   yearMin: null, yearMax: 1919,
   rooms: [], lots: [], types: [],
@@ -18,7 +19,7 @@ const EMPTY_CRITERIA = { ...DEFAULT_CRITERIA, zips: [], sizeMin: null, yearMax: 
 
 const BUILDING_TYPES = { 1: 'Kerrostalo', 2: 'Rivitalo', 4: 'Omakotitalo', 64: 'Paritalo' };
 const LOT_TYPES = { 1: 'Oma tontti', 2: 'Vuokratontti', 3: 'Valinnainen vuokratontti' };
-const NUMBER_FIELDS = ['priceMin', 'priceMax', 'sizeMin', 'sizeMax', 'yearMin', 'yearMax'];
+const NUMBER_FIELDS = ['priceMin', 'priceMax', 'sqmMin', 'sqmMax', 'sizeMin', 'sizeMax', 'yearMin', 'yearMax'];
 
 const $ = (sel) => document.querySelector(sel);
 const euro = new Intl.NumberFormat('fi-FI', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
@@ -89,6 +90,7 @@ const between = (value, min, max) =>
 function matches(l, c) {
   if (c.zips.length && !c.zips.includes(l.zip)) return false;
   if (!between(l.price, c.priceMin, c.priceMax)) return false;
+  if (!between(sqm(l), c.sqmMin, c.sqmMax)) return false;
   if (!between(l.size, c.sizeMin, c.sizeMax)) return false;
   if (!between(l.year, c.yearMin, c.yearMax)) return false;
   if (c.rooms.length && !c.rooms.includes(Math.min(l.rooms ?? 0, 5))) return false;
