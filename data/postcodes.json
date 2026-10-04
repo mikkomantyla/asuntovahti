@@ -1,0 +1,847 @@
+[
+ {
+  "zip": "00100",
+  "id": 14694,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00120",
+  "id": 14695,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00130",
+  "id": 14696,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00140",
+  "id": 14697,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00150",
+  "id": 14698,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00160",
+  "id": 14699,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00170",
+  "id": 14700,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00180",
+  "id": 14701,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00190",
+  "id": 88978,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00200",
+  "id": 14702,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00210",
+  "id": 14703,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00220",
+  "id": 5079889,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00230",
+  "id": 89843,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00240",
+  "id": 14704,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00250",
+  "id": 14705,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00260",
+  "id": 14706,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00270",
+  "id": 14707,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00280",
+  "id": 14708,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00290",
+  "id": 14709,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00300",
+  "id": 14710,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00310",
+  "id": 14711,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00320",
+  "id": 14712,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00330",
+  "id": 14713,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00340",
+  "id": 14714,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00350",
+  "id": 14715,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00360",
+  "id": 14716,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00370",
+  "id": 14717,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00380",
+  "id": 14718,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00390",
+  "id": 14719,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00400",
+  "id": 14720,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00410",
+  "id": 14721,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00420",
+  "id": 14722,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00430",
+  "id": 14723,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00440",
+  "id": 14724,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00500",
+  "id": 14725,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00510",
+  "id": 14726,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00520",
+  "id": 14727,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00530",
+  "id": 14728,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00540",
+  "id": 5079937,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00550",
+  "id": 14729,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00560",
+  "id": 14730,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00570",
+  "id": 14731,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00580",
+  "id": 14732,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00590",
+  "id": 5079945,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00600",
+  "id": 14733,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00610",
+  "id": 14734,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00620",
+  "id": 14735,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00630",
+  "id": 14736,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00640",
+  "id": 14737,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00650",
+  "id": 14738,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00660",
+  "id": 14739,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00670",
+  "id": 14740,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00680",
+  "id": 14741,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00690",
+  "id": 14742,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00700",
+  "id": 14743,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00710",
+  "id": 14744,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00720",
+  "id": 14745,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00730",
+  "id": 14746,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00740",
+  "id": 14747,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00750",
+  "id": 14748,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00760",
+  "id": 14749,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00770",
+  "id": 14750,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00780",
+  "id": 14751,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00790",
+  "id": 14752,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00800",
+  "id": 14753,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00810",
+  "id": 14754,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00820",
+  "id": 14755,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00830",
+  "id": 14756,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00840",
+  "id": 14757,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00850",
+  "id": 14758,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00860",
+  "id": 14759,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00870",
+  "id": 14760,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00880",
+  "id": 14761,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00890",
+  "id": 5079989,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00900",
+  "id": 14762,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00910",
+  "id": 14763,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00920",
+  "id": 14764,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00930",
+  "id": 14765,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00940",
+  "id": 14766,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00950",
+  "id": 14767,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00960",
+  "id": 14768,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00970",
+  "id": 14769,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00980",
+  "id": 14770,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "00990",
+  "id": 14771,
+  "city": "Helsinki"
+ },
+ {
+  "zip": "01200",
+  "id": 14777,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01230",
+  "id": 14778,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01260",
+  "id": 14779,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01280",
+  "id": 14780,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01300",
+  "id": 14781,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01340",
+  "id": 9013124,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01350",
+  "id": 14782,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01360",
+  "id": 14783,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01370",
+  "id": 14784,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01380",
+  "id": 14785,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01390",
+  "id": 14786,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01400",
+  "id": 14787,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01420",
+  "id": 14788,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01450",
+  "id": 14789,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01480",
+  "id": 14790,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01490",
+  "id": 14791,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01510",
+  "id": 14792,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01520",
+  "id": 14793,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01530",
+  "id": 14794,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01550",
+  "id": 14795,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01600",
+  "id": 14796,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01610",
+  "id": 14797,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01620",
+  "id": 14798,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01630",
+  "id": 14799,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01640",
+  "id": 14800,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01650",
+  "id": 14801,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01660",
+  "id": 14802,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01670",
+  "id": 14803,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01680",
+  "id": 14804,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01690",
+  "id": 14805,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01700",
+  "id": 14806,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01710",
+  "id": 14807,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01720",
+  "id": 14808,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01730",
+  "id": 14809,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01740",
+  "id": 14810,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01750",
+  "id": 14811,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01760",
+  "id": 14812,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "01770",
+  "id": 14813,
+  "city": "Vantaa"
+ },
+ {
+  "zip": "02100",
+  "id": 14821,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02110",
+  "id": 14822,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02120",
+  "id": 14823,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02130",
+  "id": 14824,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02140",
+  "id": 14825,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02150",
+  "id": 14826,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02160",
+  "id": 14827,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02170",
+  "id": 14828,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02180",
+  "id": 14829,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02200",
+  "id": 14830,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02210",
+  "id": 14831,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02230",
+  "id": 14832,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02240",
+  "id": 14833,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02250",
+  "id": 11809716,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02260",
+  "id": 14834,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02270",
+  "id": 14835,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02280",
+  "id": 14836,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02290",
+  "id": 14837,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02300",
+  "id": 14838,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02320",
+  "id": 14839,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02330",
+  "id": 14840,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02340",
+  "id": 14841,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02360",
+  "id": 14842,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02380",
+  "id": 14843,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02600",
+  "id": 14856,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02610",
+  "id": 14857,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02620",
+  "id": 14858,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02630",
+  "id": 14859,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02650",
+  "id": 14860,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02660",
+  "id": 14861,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02680",
+  "id": 14862,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02700",
+  "id": 31181,
+  "city": "Kauniainen"
+ },
+ {
+  "zip": "02710",
+  "id": 14863,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02720",
+  "id": 14864,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02730",
+  "id": 14865,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02740",
+  "id": 14866,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02750",
+  "id": 14867,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02760",
+  "id": 14868,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02770",
+  "id": 14869,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02780",
+  "id": 14870,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02810",
+  "id": 14871,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02820",
+  "id": 14872,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02860",
+  "id": 14873,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02920",
+  "id": 14875,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02940",
+  "id": 14876,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02970",
+  "id": 14877,
+  "city": "Espoo"
+ },
+ {
+  "zip": "02980",
+  "id": 14878,
+  "city": "Espoo"
+ }
+]

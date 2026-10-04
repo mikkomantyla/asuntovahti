@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asuntovahti</title>
+  <meta name="description" content="Hakee päivittäin uudet myytävät asunnot Oikotieltä ja näyttää hakuehtoihin sopivat.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">🏠</span>
+      <div>
+        <h1>Asuntovahti</h1>
+        <p id="crawl-info" class="muted">Ladataan kohteita…</p>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="matches" role="tab">Sopivat <span class="count" id="count-matches">0</span></button>
+      <button class="tab" data-tab="saved" role="tab">Tallennetut <span class="count" id="count-saved">0</span></button>
+    </nav>
+    <button id="share" class="ghost" title="Kopioi linkki, jolla hakuehdot ja tallennetut kohteet aukeavat toisella laitteella">Kopioi linkki</button>
+  </header>
+
+  <div class="layout">
+    <aside class="filters" id="filters">
+      <details open id="filters-details">
+        <summary>Hakuehdot</summary>
+        <form id="criteria" autocomplete="off">
+          <fieldset>
+            <legend>Postinumerot</legend>
+            <div class="chips" id="zip-chips"></div>
+            <input type="text" id="zip-input" inputmode="numeric" maxlength="5" placeholder="Lisää postinumero, esim. 00120" list="zip-list">
+            <datalist id="zip-list"></datalist>
+            <p class="hint" id="zip-hint">Tyhjä = koko pääkaupunkiseutu</p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Hinta (€)</legend>
+            <div class="range">
+              <input type="number" name="priceMin" min="0" step="10000" placeholder="min">
+              <span>–</span>
+              <input type="number" name="priceMax" min="0" step="10000" placeholder="max">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Pinta-ala (m²)</legend>
+            <div class="range">
+              <input type="number" name="sizeMin" min="0" step="5" placeholder="min">
+              <span>–</span>
+              <input type="number" name="sizeMax" min="0" step="5" placeholder="max">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Rakennusvuosi</legend>
+            <div class="range">
+              <input type="number" name="yearMin" min="1700" max="2100" placeholder="alkaen">
+              <span>–</span>
+              <input type="number" name="yearMax" min="1700" max="2100" placeholder="asti">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Huoneiden määrä</legend>
+            <div class="toggles" data-field="rooms">
+              <button type="button" data-value="1">1</button>
+              <button type="button" data-value="2">2</button>
+              <button type="button" data-value="3">3</button>
+              <button type="button" data-value="4">4</button>
+              <button type="button" data-value="5">5+</button>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Tontti</legend>
+            <div class="toggles" data-field="lots">
+              <button type="button" data-value="1">Oma</button>
+              <button type="button" data-value="2">Vuokra</button>
+              <button type="button" data-value="3">Valinnainen vuokra</button>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Talotyyppi</legend>
+            <div class="toggles" data-field="types">
+              <button type="button" data-value="1">Kerrostalo</button>
+              <button type="button" data-value="2">Rivitalo</button>
+              <button type="button" data-value="64">Paritalo</button>
+              <button type="button" data-value="4">Omakotitalo</button>
+              <button type="button" data-value="0">Muu</button>
+            </div>
+          </fieldset>
+
+          <button type="button" id="reset" class="ghost small">Tyhjennä hakuehdot</button>
+        </form>
+      </details>
+    </aside>
+
+    <main>
+      <div class="toolbar">
+        <p id="summary" class="muted"></p>
+        <label class="check" id="only-new-label"><input type="checkbox" id="only-new"> Vain uudet</label>
+        <label class="sort">Järjestys
+          <select id="sort">
+            <option value="newest">Uusimmat ensin</option>
+            <option value="priceAsc">Halvin ensin</option>
+            <option value="priceDesc">Kallein ensin</option>
+            <option value="sqmAsc">Halvin €/m²</option>
+            <option value="sizeDesc">Suurin ensin</option>
+          </select>
+        </label>
+      </div>
+      <div id="list" class="grid"></div>
+      <button id="more" class="ghost" hidden>Näytä lisää</button>
+      <p id="rejected-info" class="muted footer-note"></p>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
