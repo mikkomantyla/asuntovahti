@@ -5,6 +5,8 @@
 const STORAGE_KEY = 'asuntovahti:v1';
 const NEW_WINDOW_MS = 36 * 60 * 60 * 1000; // first seen within the latest daily crawl
 const PAGE = 60;
+const DAYS_SLIDER_MAX = 181; // the slider's last step means "no limit"
+const DAY_MS = 24 * 60 * 60 * 1000;
 const SAVE_ANIMATION_MS = 1000;
 
 const DEFAULT_CRITERIA = {
@@ -13,6 +15,7 @@ const DEFAULT_CRITERIA = {
   sqmMin: null, sqmMax: null,
   sizeMin: 60, sizeMax: null,
   yearMin: null, yearMax: 1919,
+  daysMax: null, // max days on the market; null = no limit
   rooms: [], lots: [], types: [],
 };
 const EMPTY_CRITERIA = { ...DEFAULT_CRITERIA, zips: [], sizeMin: null, yearMax: null };
@@ -93,12 +96,14 @@ function matches(l, c) {
   if (!between(sqm(l), c.sqmMin, c.sqmMax)) return false;
   if (!between(l.size, c.sizeMin, c.sizeMax)) return false;
   if (!between(l.year, c.yearMin, c.yearMax)) return false;
+  if (c.daysMax != null && daysOnMarket(l) > c.daysMax) return false;
   if (c.rooms.length && !c.rooms.includes(Math.min(l.rooms ?? 0, 5))) return false;
   if (c.lots.length && !c.lots.includes(l.lot ?? 0)) return false;
   if (c.types.length && !c.types.includes(l.type in BUILDING_TYPES ? l.type : 0)) return false;
   return true;
 }
 
+const daysOnMarket = (l) => Math.floor((Date.now() - Date.parse(l.published)) / DAY_MS);
 const isNew = (l) => crawledAt - Date.parse(l.firstSeen) < NEW_WINDOW_MS;
 const sqm = (l) => (l.price && l.size ? l.price / l.size : null);
 const nullsLast = (f, dir = 1) => (a, b) => {
@@ -154,7 +159,7 @@ function cardHtml(l, { saved }) {
         <div class="muted">${esc([l.zip, l.district, l.city].filter(Boolean).join(' · '))}</div>
         <div class="facts">${facts.map((f) => `<span>${esc(f)}</span>`).join('')}</div>
         ${l.layout ? `<div class="layout-text">${esc(l.layout)}</div>` : ''}
-        <div class="tags">${tags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}${l.published ? `<span class="tag">Julkaistu ${dateFmt.format(new Date(l.published))}</span>` : ''}</div>
+        <div class="tags">${tags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}${l.published ? `<span class="tag">Julkaistu ${dateFmt.format(new Date(l.published))} · ${daysOnMarket(l)} pv</span>` : ''}</div>
       </div>
       <div class="actions">
         ${saved
@@ -208,7 +213,14 @@ function renderCriteria() {
   $('#zip-chips').innerHTML = c.zips
     .map((z) => `<span class="chip">${esc(z)}<button type="button" data-zip="${esc(z)}" aria-label="Poista ${esc(z)}">×</button></span>`)
     .join('');
+  $('#days').value = c.daysMax ?? DAYS_SLIDER_MAX;
+  renderDaysLabel();
   $('#sort').value = state.sort;
+}
+
+function renderDaysLabel() {
+  const days = state.criteria.daysMax;
+  $('#days-label').textContent = days == null ? 'Ei rajaa' : `enintään ${days} pv`;
 }
 
 function celebrate(card, button) {
@@ -278,6 +290,13 @@ function bindEvents() {
     state.criteria[e.target.name] = e.target.value === '' ? null : Number(e.target.value);
     clearTimeout(debounce);
     debounce = setTimeout(() => { shown = PAGE; update(); }, 250);
+  });
+  $('#days').addEventListener('input', (e) => {
+    const value = Number(e.target.value);
+    state.criteria.daysMax = value >= DAYS_SLIDER_MAX ? null : value;
+    renderDaysLabel();
+    clearTimeout(debounce);
+    debounce = setTimeout(() => { shown = PAGE; update(); }, 100);
   });
   $('#criteria').addEventListener('submit', (e) => e.preventDefault());
 
